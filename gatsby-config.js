@@ -6,12 +6,16 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [`gatsby-plugin-netlify-cms`, `gatsby-plugin-netlify-cache`, `gatsby-transformer-remark`,
+  plugins: [
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-netlify-cache`,
+    `gatsby-transformer-remark`,
     {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      name: `projects`,
-      path: `${__dirname}/content/projects/`
-      }
-  }],
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/content/projects/`,
+      },
+    },
+  ],
 }
