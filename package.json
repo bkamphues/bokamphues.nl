@@ -1,7 +1,7 @@
 {
   "name": "bokamphues.nl",
   "private": true,
-  "description": "My personal website. Created with Gatsby and Tailwind CSS. Hosted on Netlify. ",
+  "description": "My personal website. Created with Gatsby and Tailwind CSS. Hosted on Netlify.",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
