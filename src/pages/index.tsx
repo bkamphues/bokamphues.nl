@@ -4,8 +4,9 @@ import ProjectCard from "../components/project-card"
 export default function Index() {
   return (
     <div>
-      Hello world! This is a test.<br></br>
-      <ProjectCard></ProjectCard>
+      <ProjectCard title="Test" year="2021">
+        This is a test project to showcase the cards.
+      </ProjectCard>
     </div>
   )
 }
