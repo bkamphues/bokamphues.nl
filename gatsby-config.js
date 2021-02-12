@@ -18,15 +18,5 @@ module.exports = {
         path: `${__dirname}/content/projects/`,
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Inter`,
-          },
-        ],
-      },
-    },
   ],
 }
