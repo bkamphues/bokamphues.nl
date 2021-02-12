@@ -1,4 +1,5 @@
 import React from "react"
+import ImageFluid from "./image-fluid"
 
 function checkPropType(prop, type) {
   if (prop == null) {
@@ -13,16 +14,18 @@ export default function ProjectCard(props) {
   checkPropType(props.year, "year")
   checkPropType(props.title, "title")
   checkPropType(props.children, "children")
+  checkPropType(props.thumbnail, "thumbnail")
 
   // return component
   return (
     <div className="p-2">
-      <div className="bg-white rounded shadow-lg max-w-sm max-h-md">
+      <div className="bg-white rounded shadow-lg max-w-xs overflow-hidden">
+        <ImageFluid className="w-full" image={props.thumbnail} />
         <div className="px-6 py-4">
-          <h5 className="font-sans proportional-nums text-xl font-light text-blue-400">
+          <h5 className="text-rose font-sans proportional-nums text-xl font-light text-blue-400">
             {props.year}
           </h5>
-          <h4 className="font-sans text-2xl mb-2 font-bold text-blue-600">
+          <h4 className="text-primary font-sans text-2xl mb-2 font-bold text-blue-600">
             {props.title}
           </h4>
           <p className="text-sm font-light">{props.children}</p>
