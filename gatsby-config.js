@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+const path = require("path")
+
 module.exports = {
   /* Your site config here */
   plugins: [
@@ -11,11 +13,20 @@ module.exports = {
     `gatsby-plugin-netlify-cache`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
         path: `${__dirname}/content/projects/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: path.join(__dirname, `static`, `assets`),
       },
     },
   ],
