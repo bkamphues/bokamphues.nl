@@ -22,13 +22,16 @@ export default function ProjectCard(props) {
       <div className="bg-white rounded shadow-lg max-w-xs overflow-hidden">
         <ImageFluid className="w-full" image={props.thumbnail} />
         <div className="px-6 py-4">
-          <h5 className="text-rose font-sans proportional-nums text-xl font-light text-blue-400">
+          <h5 className="text-primary-light font-sans proportional-nums text-xl font-light text-blue-400">
             {props.year}
           </h5>
           <h4 className="text-primary font-sans text-2xl mb-2 font-bold text-blue-600">
             {props.title}
           </h4>
-          <p className="text-sm font-light">{props.children}</p>
+          <div
+            className="text-sm font-light"
+            dangerouslySetInnerHTML={{ __html: props.children }}
+          ></div>
           {props.gh_link && <a href={props.gh_link}>Github</a>}
           {props.pr_link && <a href={props.pr_link}></a>}
         </div>
