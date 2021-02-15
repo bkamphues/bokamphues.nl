@@ -3,10 +3,12 @@ import ProjectCard from "./project-card";
 import path from "path";
 
 interface ProjectGridProps {
+	// interface for ProjectGrid properties
 	projects: object;
 }
 
 interface ProjectGridState {
+	// interface for ProjectGrid state
 	projects: object;
 }
 
