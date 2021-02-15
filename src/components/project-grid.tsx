@@ -3,25 +3,25 @@ import ProjectCard from "./project-card";
 import path from "path";
 
 interface ProjectGridProps {
-  projects: object;
+	projects: object;
 }
 
 interface ProjectGridState {
-  projects: object;
+	projects: object;
 }
 
 export default class ProjectGrid extends React.Component<
-  ProjectGridProps,
-  ProjectGridState
+	ProjectGridProps,
+	ProjectGridState
 > {
-  // react component to create a grid of all projects
+	// react component to create a grid of all projects
 
-  constructor(props) {
-    super(props);
-    this.state = { projects: props.projects };
-  }
+	constructor(props) {
+		super(props);
+		this.state = { projects: props.projects };
+	}
 
-  render() {
-    return <pre>{JSON.stringify(this.state.projects, null, 4)}</pre>;
-  }
+	render() {
+		return <pre>{JSON.stringify(this.state.projects, null, 4)}</pre>;
+	}
 }
