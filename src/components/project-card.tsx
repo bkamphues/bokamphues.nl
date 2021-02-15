@@ -16,7 +16,7 @@ export default function ProjectCard(props: ProjectCardProps) {
 
 	// return component
 	return (
-		<div className="p-4 w-full sm:w-1/4 overflow-hidden">
+		<div className="p-4 w-full sm:w-1/2 xl:w-1/4 overflow-hidden">
 			<div className="mx-auto group transform hover:scale-105 transition ease-in-out duration-300 bg-white rounded-xl shadow-md max-w-xs overflow-hidden">
 				<ImageFluid className="w-full" image={props.thumbnail} />
 				<div className="px-6 py-4">
@@ -37,7 +37,7 @@ export default function ProjectCard(props: ProjectCardProps) {
 					<div className="space-x-1">
 						{props.tags.map(tag => (
 							<div className="inline-block py-4">
-								<div className="rounded-lg shadow-inner p-1.5 bg-primary">
+								<div className="rounded-lg shadow-inner py-1 px-1.5 bg-primary">
 									<div className="text-xs font-light text-gray-100">{tag}</div>
 								</div>
 							</div>
