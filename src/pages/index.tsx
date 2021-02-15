@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 
 export default function Index({ data }) {
 	return (
-		<body className="bg-gray-100 h-screen">
+		<body className="bg-gray-100 h-full sm:h-screen">
 			<div className="px-10">
 				<div className="flex flex-wrap -mx-5 overflow-hidden">
 					{/* <ProjectGrid projects={data} /> */}
