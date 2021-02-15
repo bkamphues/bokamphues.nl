@@ -1,9 +1,9 @@
-import React from "react"
-import ImageFluid from "./image-fluid"
+import React from "react";
+import ImageFluid from "./image-fluid";
 
 function checkPropType(prop, type) {
   if (prop == null) {
-    throw new Error(`No data was given for ${type}`)
+    throw new Error(`No data was given for ${type}`);
   }
 }
 
@@ -11,10 +11,10 @@ export default function ProjectCard(props) {
   // project card component
 
   // check data
-  checkPropType(props.year, "year")
-  checkPropType(props.title, "title")
-  checkPropType(props.children, "children")
-  checkPropType(props.thumbnail, "thumbnail")
+  checkPropType(props.year, "year");
+  checkPropType(props.title, "title");
+  checkPropType(props.children, "children");
+  checkPropType(props.thumbnail, "thumbnail");
 
   // return component
   return (
@@ -37,5 +37,5 @@ export default function ProjectCard(props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

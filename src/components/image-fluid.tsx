@@ -1,9 +1,9 @@
-import React from "react"
-import Img from "gatsby-image"
-import { graphql, StaticQuery } from "gatsby"
+import React from "react";
+import Img from "gatsby-image";
+import { graphql, StaticQuery } from "gatsby";
 
 function renderImage(image) {
-  return <Img fluid={image.node.childImageSharp.fluid} />
+  return <Img fluid={image.node.childImageSharp.fluid} />;
 }
 
 export default function ImageFluid(props) {
@@ -28,9 +28,9 @@ export default function ImageFluid(props) {
       render={data => {
         const image = data.images.edges.find(
           image => image.node.relativePath === props.image
-        )
-        return renderImage(image)
+        );
+        return renderImage(image);
       }}
     />
-  )
+  );
 }
