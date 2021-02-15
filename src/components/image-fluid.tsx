@@ -15,7 +15,7 @@ export default function ImageFluid(props) {
 						edges {
 							node {
 								childImageSharp {
-									fluid(maxWidth: 1000) {
+									fluid(maxWidth: 1000, maxHeight: 1000) {
 										...GatsbyImageSharpFluid
 									}
 								}
