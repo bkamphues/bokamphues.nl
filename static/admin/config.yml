@@ -57,6 +57,13 @@ collections:
        file: "content/site_settings/navbar.yml"
        fields:
         - label: Navigation Links
+          label_singular: Navigation Link
           name: nav_links
           widget: list
-          field: {label: Navigation Link, name: nav_link, widget: string}
+          fields: 
+            - label: Link Name
+              name: link_name
+              widget: string
+            - label: Link URL
+              name: link_url 
+              widget: string
