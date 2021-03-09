@@ -59,10 +59,7 @@ collections:
         - label: Navigation Links
           name: nav_links
           widget: list
-          fields:
-          - label: Internal Link
-            name: internal_link
-            widget: string
-          - label: External Link
-            name: external_link
-            widget: string     
+          field:
+            - label: Navigation Link
+              name: nav_link
+              widget: string
