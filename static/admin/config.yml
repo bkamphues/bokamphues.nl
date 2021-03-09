@@ -4,8 +4,6 @@ backend:
 
 local_backend: true
 
-publish_mode: editorial_workflow
-
 media_folder: static/assets
 public_folder: /assets
 
@@ -47,3 +45,24 @@ collections:
         name: pr_link
         widget: string
         hint: A link to a video or project page if there is one.
+
+  - name: site_settings
+    label: Site Settings
+    label_singular: Site Setting
+    description: >
+      All site wide settings like navbar links, logo's etc.
+    files:
+     - label: "Navigation Bar"
+       name: "navbar"
+       file: "content/site_settings/navbar.yml"
+       fields:
+        - label: Navigation Links
+          name: nav_links
+          widget: list
+          fields:
+          - label: Internal Link
+            name: internal_link
+            widget: string
+          - label: External Link
+            name: external_link
+            widget: string     
