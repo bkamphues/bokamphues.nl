@@ -15,6 +15,7 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -29,5 +30,12 @@ module.exports = {
         path: path.join(__dirname, `static`, `assets`),
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `settings`,
+        path: path.join(__dirname, `content`, `site_settings`)
+      }
+    }
   ],
 }
