@@ -59,7 +59,4 @@ collections:
         - label: Navigation Links
           name: nav_links
           widget: list
-          field:
-            - label: Navigation Link
-              name: nav_link
-              widget: string
+          field: {label: Navigation Link, name: nav_link, widget: string}
