@@ -35,7 +35,14 @@ function NavigationLinks() {
 				</a>
 			);
 		} else {
-			navigationLinks.push(<Link to={link.link_url}>{link.link_name}</Link>);
+			navigationLinks.push(
+				<Link
+					className="px-3 py-2 text-md rounded-md text-white hover:bg-gray-700 font-semibold"
+					to={link.link_url}
+				>
+					{link.link_name}
+				</Link>
+			);
 		}
 	});
 
@@ -52,7 +59,7 @@ export default class Navbar extends React.Component {
 	// render hook
 	render() {
 		return (
-			<nav className="bg-gray-800">
+			<nav className="bg-gray-800 p-4 shadow-md">
 				<NavigationLinks />
 			</nav>
 		);
