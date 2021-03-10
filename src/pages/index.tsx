@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Navbar from "../components/navbar"
+import Navbar from "../components/navbar";
 
 export default function Index({ data }) {
 	return (

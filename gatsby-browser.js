@@ -1,2 +1,2 @@
-import "typeface-inter"
-import "./src/styles/global.css"
+import "typeface-inter";
+import "./src/styles/global.css";
