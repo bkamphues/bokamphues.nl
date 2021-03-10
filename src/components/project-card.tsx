@@ -16,8 +16,8 @@ export default function ProjectCard(props: ProjectCardProps) {
 
 	// return component
 	return (
-		<div className="p-4 w-full sm:w-1/2 xl:w-1/4 overflow-hidden">
-			<div className="mx-auto group transform hover:scale-105 transition ease-in-out duration-300 bg-white rounded-xl shadow-md max-w-xs overflow-hidden">
+		<div className="p-4 overflow-hidden">
+			<div className="group transform hover:scale-105 transition ease-in-out duration-300 bg-white rounded-xl shadow-md max-w-xs overflow-hidden">
 				<ImageFluid className="w-full" image={props.thumbnail} />
 				<div className="px-6 py-4">
 					<h5 className="font-sans proportional-nums text-primary-light text-xl font-light">
