@@ -1,3 +1,5 @@
+// function to test if the input string is a valid URL
+// useful for link queries to decide between an internal or external link
 export function validURL(link: string) {
 	// link validation regex
 	const pattern = new RegExp(
