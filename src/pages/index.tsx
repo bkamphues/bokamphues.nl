@@ -5,16 +5,18 @@ import ProjectCard from "../components/project-card";
 
 export default function Index({ data }) {
 	return (
-		<body className="bg-gray-100 h-screen">
+		<body className="bg-gray-100 h-full">
 			<Navbar></Navbar>
-			<ProjectCard
-				title="test"
-				year={2021}
-				thumbnail="test.png"
-				tags={["Development", "Test"]}
-			>
-				This is a test project.
-			</ProjectCard>
+			<div className="h-screen">
+				<ProjectCard
+					title="test"
+					year={2021}
+					thumbnail="game_profile_picture.jpg"
+					tags={["Development", "Test"]}
+				>
+					This is a test project.
+				</ProjectCard>
+			</div>
 		</body>
 	);
 }
