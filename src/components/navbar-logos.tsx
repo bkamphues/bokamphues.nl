@@ -20,7 +20,7 @@ export default function NavigationLogos() {
 	// return a <div> with an <img> tag for the logo
 	return (
 		<div className="flex-shrink-0 flex items-center">
-			<img className="hidden lg:block h-8 w-auto" src={logo} />
+			<img className="hidden lg:block h-8 w-auto" alt="Logo" src={logo} />
 		</div>
 	);
 }
