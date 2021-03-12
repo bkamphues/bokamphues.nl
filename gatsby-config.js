@@ -37,4 +37,12 @@ module.exports = {
 			},
 		},
 	],
+	siteMetadata: {
+		title: "Bo Kamphues",
+		titleTemplate: "%s · Bo Kamphues",
+		description:
+			"Personal portfolio, contact and blog website for Bo Kamphues.",
+		url: "https://www.bokamphues.nl",
+		imdbProfile: "https://www.imdb.com/name/nm6503731/?ref_=nv_sr_srsg_0",
+	},
 };
