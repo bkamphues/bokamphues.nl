@@ -10,7 +10,6 @@ module.exports = {
 	/* Your site config here */
 	plugins: [
 		`gatsby-plugin-netlify-cms`,
-		`gatsby-plugin-netlify-cache`,
 		`gatsby-transformer-remark`,
 		`gatsby-plugin-postcss`,
 		`gatsby-plugin-sharp`,
