@@ -15,6 +15,7 @@ module.exports = {
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,
 		`gatsby-transformer-yaml`,
+		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -43,6 +44,5 @@ module.exports = {
 		description:
 			"Personal portfolio, contact and blog website for Bo Kamphues.",
 		url: "https://www.bokamphues.nl",
-		imdbProfile: "https://www.imdb.com/name/nm6503731/?ref_=nv_sr_srsg_0",
 	},
 };
