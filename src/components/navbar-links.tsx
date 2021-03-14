@@ -2,8 +2,7 @@ import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { validURL } from "../util/siteLib";
 
-// component that retrieves links from site-wide settings and returns navbar items
-export default function NavigationLinks() {
+function LinkData() {
 	// retrieve link data from site settings
 	const data = useStaticQuery(graphql`
 		query {
@@ -20,6 +19,13 @@ export default function NavigationLinks() {
 			}
 		}
 	`);
+
+	return data;
+}
+
+// component that retrieves links from site-wide settings and returns navbar items
+export default function NavigationLinks({ mobileActiveClass }) {
+	const data = LinkData();
 
 	const className: string =
 		"block mt-4 lg:inline-block hover:text-gray-400 lg:mt-0 mr-10";
@@ -64,7 +70,7 @@ export default function NavigationLinks() {
 
 	// return link item
 	return (
-		<div className="hidden lg:flex text-lg text-gray-600">
+		<div className={"lg:flex text-lg text-gray-600 " + mobileActiveClass}>
 			{navigationLinks}
 		</div>
 	);

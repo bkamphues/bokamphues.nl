@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 // component that returns the site logo in a navigation block
 export default function NavigationLogos() {
-	// query for the 'logo.svg' file in the /static folder
+	// query for the 'logo2.svg' file in the /static folder
 	const data = useStaticQuery(graphql`
 		{
 			allFile(filter: { extension: { eq: "svg" }, name: { eq: "logo2" } }) {
@@ -18,5 +18,5 @@ export default function NavigationLogos() {
 	const logo = data.allFile.nodes[0].publicURL;
 
 	// return a <div> with an <img> tag for the logo
-	return <img className="h-10 w-10" alt="Logo" src={logo} />;
+	return <img className="flex-shrink-0 h-10 w-10" alt="Logo" src={logo} />;
 }
