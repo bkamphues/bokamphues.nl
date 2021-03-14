@@ -3,7 +3,7 @@ import { graphql, Link, useStaticQuery } from "gatsby";
 import { validURL } from "../util/siteLib";
 
 // component that retrieves links from site-wide settings and returns navbar items
-export default function NavigationLinks({ className, activeClassName }) {
+export default function NavigationLinks() {
 	// retrieve link data from site settings
 	const data = useStaticQuery(graphql`
 		query {
@@ -20,6 +20,11 @@ export default function NavigationLinks({ className, activeClassName }) {
 			}
 		}
 	`);
+
+	const className: string =
+		"block mt-4 lg:inline-block hover:text-gray-400 lg:mt-0 mr-10";
+	const activeClassName: string =
+		"block mt-4 lg:inline-block text-indigo-500 lg:mt-0 mr-10";
 
 	// filter the data for navigation links
 	let links = data.allSiteSettingsYaml.edges.filter(
@@ -48,6 +53,7 @@ export default function NavigationLinks({ className, activeClassName }) {
 				<Link
 					className={className}
 					activeClassName={activeClassName}
+					partiallyActive={false}
 					to={link.link_url}
 				>
 					{link.link_name}
@@ -58,8 +64,8 @@ export default function NavigationLinks({ className, activeClassName }) {
 
 	// return link item
 	return (
-		<div className="hidden sm:block sm:ml-6">
-			<div className="flex space-x-4">{navigationLinks}</div>
+		<div className="hidden lg:flex text-lg text-gray-600">
+			{navigationLinks}
 		</div>
 	);
 }

@@ -6,7 +6,7 @@ export default function NavigationLogos() {
 	// query for the 'logo.svg' file in the /static folder
 	const data = useStaticQuery(graphql`
 		{
-			allFile(filter: { extension: { eq: "svg" }, name: { eq: "logo" } }) {
+			allFile(filter: { extension: { eq: "svg" }, name: { eq: "logo2" } }) {
 				nodes {
 					publicURL
 				}
@@ -18,9 +18,5 @@ export default function NavigationLogos() {
 	const logo = data.allFile.nodes[0].publicURL;
 
 	// return a <div> with an <img> tag for the logo
-	return (
-		<div className="flex-shrink-0 flex items-center">
-			<img className="hidden lg:block h-8 w-auto" alt="Logo" src={logo} />
-		</div>
-	);
+	return <img className="h-10 w-10" alt="Logo" src={logo} />;
 }
