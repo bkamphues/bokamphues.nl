@@ -1,5 +1,6 @@
+import { Transition } from "@tailwindui/react";
 import React from "react";
-import NavigationLinks from "./navbar-links";
+import NavigationLinks, { NavigationLinksMobile } from "./navbar-links";
 import NavigationLogos from "./navbar-logos";
 
 // hamburger button
@@ -50,14 +51,23 @@ export default class Navbar extends React.Component<
 	// render hook
 	render() {
 		return (
-			<nav className="">
+			<nav>
 				<div className="flex flex-wrap items-center justify-between p-6 container mx-auto">
 					<NavigationLogos />
 					<NavigationHamburger eventHandler={this.handleHamburger} />
-					<div className={this.state.mobileActive ? "w-full" : "hidden"} />
-					<NavigationLinks
-						mobileActiveClass={this.state.mobileActive ? "block" : "hidden"}
-					/>
+					<NavigationLinks />
+					<Transition
+						show={this.state.mobileActive}
+						enter="transition-opacity duration-500"
+						enterFrom="opacity-0"
+						enterTo="opacity-100"
+						leave="transition-opacity duration-500"
+						leaveFrom="opacity-100"
+						leaveTo="opacity-0"
+						className="w-full"
+					>
+						<NavigationLinksMobile />
+					</Transition>
 				</div>
 			</nav>
 		);
