@@ -56,11 +56,7 @@ export default class Navbar extends React.Component<
 					<NavigationHamburger eventHandler={this.handleHamburger} />
 					<div className={this.state.mobileActive ? "w-full" : "hidden"} />
 					<NavigationLinks
-						mobileActiveClass={
-							this.state.mobileActive
-								? "transition duration-300 ease-in-out block"
-								: "transition duration-300 ease-in-out hidden"
-						}
+						mobileActiveClass={this.state.mobileActive ? "block" : "hidden"}
 					/>
 				</div>
 			</nav>
