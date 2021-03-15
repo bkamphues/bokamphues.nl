@@ -1,0 +1,9 @@
+nav_links:
+  - link_name: Home
+    link_url: /
+  - link_name: Projects
+    link_url: /projects/
+  - link_name: Blog
+    link_url: /blog/
+  - link_name: Contact
+    link_url: /contact/

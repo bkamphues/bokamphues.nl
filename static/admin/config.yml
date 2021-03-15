@@ -1,15 +1,69 @@
 backend:
   name: git-gateway
+  branch: dev
+
+local_backend: true
 
 media_folder: static/assets
 public_folder: /assets
+
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: projects
+    label: Projects
+    label_singular: Project
+    description: >
+      All creative, visual-effects and coding projects shown on the portfolio page.
+    folder: content/projects
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - label: Project Title
+        name: title
+        widget: string
+        hint: The project title.
+      - label: Project Year
+        name: year
+        widget: number
+        default: 2021
+        value_type: int
+        min: 2017
+        hint: The year this project was made/finished.
+      - label: Project Thumbnail
+        name: thumbnail
+        widget: image
+        hint: A thumbnail used for the card on the overview portfolio page.
+        media_library:
+          allow_multiple: false
+      - label: Description
+        name: body
+        widget: markdown
+        hint: A short description about the project.
+      - label: Github Link
+        name: gh_link
+        widget: string
+        hint: A link to the github page if there is one.
+      - label: Project Link
+        name: pr_link
+        widget: string
+        hint: A link to a video or project page if there is one.
+
+  - name: site_settings
+    label: Site Settings
+    label_singular: Site Setting
+    description: >
+      All site wide settings like navbar links, logo's etc.
+    files:
+     - label: "Navigation Bar"
+       name: "navbar"
+       file: "content/site_settings/navbar.yml"
+       fields:
+        - label: Navigation Links
+          label_singular: Navigation Link
+          name: nav_links
+          widget: list
+          fields: 
+            - label: Link Name
+              name: link_name
+              widget: string
+            - label: Link URL
+              name: link_url 
+              widget: string
