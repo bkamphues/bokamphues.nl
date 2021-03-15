@@ -5,3 +5,5 @@ nav_links:
     link_url: /projects/
   - link_name: Blog
     link_url: /blog/
+  - link_name: Contact
+    link_url: /contact/
