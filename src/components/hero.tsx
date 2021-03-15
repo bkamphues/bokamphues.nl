@@ -1,6 +1,6 @@
-import { graphql } from "gatsby";
 import React from "react";
 import Typewriter from "typewriter-effect";
+import { StaticImage } from "gatsby-plugin-image";
 
 export default function Hero({
 	heading,
@@ -20,7 +20,16 @@ export default function Hero({
 	// return component
 	return (
 		<div className="w-full p-5">
-			<h1 className="mx-auto mb-4 max-w-md text-4xl sm:text-6xl text-indigo-500 text-center">
+			<StaticImage
+				src="../../static/assets/profile_picture.jpg"
+				alt="Profile Picture"
+				placeholder="blurred"
+				layout="fixed"
+				width={250}
+				aspectRatio={1 / 1}
+				className="mx-auto rounded-full mb-4 border-8 shadow-xl"
+			/>
+			<h1 className="mx-auto mb-4 max-w-lg text-4xl sm:text-6xl text-indigo-500 text-center">
 				{heading}
 			</h1>
 			<h2 className="mx-auto max-w-md text-3xl sm:text-5xl text-gray-600 text-center h-20 md:h-24">
@@ -29,5 +38,3 @@ export default function Hero({
 		</div>
 	);
 }
-
-const query = graphql`query`;
