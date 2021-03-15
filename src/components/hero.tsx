@@ -27,7 +27,7 @@ export default function Hero({
 				layout="fixed"
 				width={250}
 				aspectRatio={1 / 1}
-				className="mx-auto rounded-full mb-4 border-8 shadow-xl"
+				className="mx-auto rounded-full mb-4 border-8 shadow-xl overflow-hidden"
 			/>
 			<h1 className="mx-auto mb-4 max-w-lg text-4xl sm:text-6xl text-indigo-500 text-center">
 				{heading}
