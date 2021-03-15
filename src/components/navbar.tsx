@@ -66,6 +66,7 @@ export default class Navbar extends React.Component<
 						leaveTo="opacity-0"
 						className="w-full"
 						unmount={false}
+						appear={true}
 					>
 						<NavigationLinksMobile />
 					</Transition>
