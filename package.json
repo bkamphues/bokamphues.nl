@@ -15,7 +15,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@tailwindui/react": "^0.1.1",
+    "@headlessui/react": "^0.3.1",
     "autoprefixer": "^10.2.4",
     "gatsby": "^3.0.3",
     "gatsby-image": "^3.0.0",

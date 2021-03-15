@@ -1,4 +1,4 @@
-import { Transition } from "@tailwindui/react";
+import { Transition } from "@headlessui/react";
 import React from "react";
 import NavigationLinks, { NavigationLinksMobile } from "./navbar-links";
 import NavigationLogos from "./navbar-logos";
@@ -65,6 +65,7 @@ export default class Navbar extends React.Component<
 						leaveFrom="opacity-100"
 						leaveTo="opacity-0"
 						className="w-full"
+						unmount={false}
 					>
 						<NavigationLinksMobile />
 					</Transition>
