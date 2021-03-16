@@ -9,6 +9,9 @@ module.exports = {
 		},
 		fontFamily: { sans: ["Inter", "sans-serif"] },
 		extend: {
+			backgroundImage: theme => ({
+				"hero-pattern": "url('../../static/pattern.svg')",
+			}),
 			colors: {
 				primary: "#083D77",
 				secondary: "#F9C22E",

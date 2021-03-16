@@ -32,7 +32,7 @@ export default function Hero({
 			<h1 className="mx-auto mb-4 max-w-lg text-4xl sm:text-6xl text-indigo-500 text-center">
 				{heading}
 			</h1>
-			<h2 className="mx-auto max-w-md text-3xl sm:text-5xl text-gray-600 text-center h-20 md:h-24">
+			<h2 className="mx-auto max-w-md text-3xl sm:text-5xl text-gray-600 text-center h-20 md:h-28">
 				{typewriter}
 			</h2>
 		</div>
