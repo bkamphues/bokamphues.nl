@@ -6,6 +6,7 @@ export default function Summary() {
 	const diff = new Date(Date.now() - birthday.getTime());
 	const age = Math.abs(diff.getUTCFullYear() - 1970);
 
+	// return the component
 	return (
 		<div className="bg-gradient-to-r from-primary to-indigo-500 mt-5 transform -skew-y-2">
 			<div className="container mx-auto p-5 transform skew-y-2">
