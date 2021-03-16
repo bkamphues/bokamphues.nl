@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../components/layout";
 import Hero from "../components/hero";
 import Summary from "../components/summary";
+import Technologies from "../components/technologies";
 
 export default function Index() {
 	return (
@@ -20,6 +21,7 @@ export default function Index() {
 				]}
 			/>
 			<Summary />
+			<Technologies />
 		</Layout>
 	);
 }

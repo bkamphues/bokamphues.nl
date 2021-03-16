@@ -8,7 +8,7 @@ export default function Summary() {
 
 	// return the component
 	return (
-		<div className="transition duration-75 transform -skew-y-2 bg-gradient-to-r from-primary to-indigo-500 mt-5">
+		<div className="transform -skew-y-2 translate-y-8 bg-gradient-to-r from-primary to-indigo-500 mt-5">
 			<div className="container mx-auto p-5 transform skew-y-2">
 				<h1 className="text-center text-2xl mb-6 font-extrabold text-gray-100">
 					A little about me
