@@ -10,7 +10,7 @@ export default function Summary() {
 	return (
 		<div className="transform -skew-y-2 translate-y-8 bg-gradient-to-r from-primary to-indigo-500 mt-5">
 			<div className="container mx-auto p-5 transform skew-y-2">
-				<h1 className="text-center text-2xl mb-6 font-extrabold text-gray-100">
+				<h1 className="text-center text-3xl mb-6 font-extrabold text-gray-100">
 					A little about me
 				</h1>
 				<div className="flex flex-wrap sm:flex-nowrap justify-center text-gray-100 text-lg font-semibold space-y-5 sm:space-y-0 pb-5 space-x-5">
