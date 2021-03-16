@@ -21,6 +21,9 @@ module.exports = {
 			},
 			gradientColorStops: ["group-hover"],
 			borderColor: ["group-hover"],
+			fontFamily: {
+				"sans-alternate": ["Segoe UI Web (West European)", "sans-serif"],
+			},
 		},
 	},
 	variants: {

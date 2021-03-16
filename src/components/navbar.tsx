@@ -58,12 +58,12 @@ export default class Navbar extends React.Component<
 					<NavigationLinks />
 					<Transition
 						show={this.state.mobileActive}
-						enter="transition-opacity duration-500"
-						enterFrom="opacity-0"
+						enter="transition transform duration-500"
+						enterFrom="opacity-0 -translate-x-8"
 						enterTo="opacity-100"
-						leave="transition-opacity duration-500"
+						leave="transition transform duration-500"
 						leaveFrom="opacity-100"
-						leaveTo="opacity-0"
+						leaveTo="opacity-0 -translate-x-8"
 						className="w-full"
 						unmount={false}
 						appear={true}
