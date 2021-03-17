@@ -1,8 +1,8 @@
 {
   "name": "bokamphues.nl",
-  "private": true,
+  "private": false,
   "description": "My personal website. Created with Gatsby and Tailwind CSS. Hosted on Netlify.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -24,6 +24,7 @@
     "gatsby-plugin-postcss": "^4.0.0",
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-sharp": "^3.0.0",
+    "gatsby-plugin-sitemap": "^3.1.0",
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-transformer-remark": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",

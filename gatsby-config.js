@@ -17,11 +17,12 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-transformer-yaml`,
 		`gatsby-plugin-react-helmet`,
+		`gatsby-plugin-sitemap`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `projects`,
-				path: `${__dirname}/content/projects/`,
+				path: path.join(__dirname, `content`, `projects`),
 			},
 		},
 		{
@@ -44,6 +45,6 @@ module.exports = {
 		titleTemplate: "%s · Bo Kamphues",
 		description:
 			"Personal portfolio, contact and blog website for Bo Kamphues.",
-		url: "https://www.bokamphues.nl",
+		siteUrl: "https://www.bokamphues.nl",
 	},
 };
