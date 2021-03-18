@@ -39,9 +39,9 @@ export default function BlogCard(props: BlogCardProps) {
 						{`${props.date.toDateString()}  ${hours.toString()}:${minutes.toString()}`}
 					</h2>
 					<p className="text-gray-500">{description}</p>
-					<div className="flex flex-wrap mt-2 gap-1">
+					<div className="flex flex-wrap mt-5 gap-1">
 						{tags.map(tag => (
-							<p className="text-sm rounded-md p-1 bg-indigo-400 text-gray-100">
+							<p className="text-xs border-2 border-indigo-200 rounded-md p-1 bg-indigo-400 text-gray-100">
 								{tag}
 							</p>
 						))}
