@@ -4,7 +4,7 @@ import Footer from "./footer";
 
 export default function Layout({ children }) {
 	return (
-		<div className="flex flex-col min-h-screen bg-gray-100 overflow-hidden">
+		<div className="flex flex-col min-h-screen bg-gray-200 overflow-hidden">
 			<Navbar />
 			<div className="flex-grow">{children}</div>
 			<Footer />
