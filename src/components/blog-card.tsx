@@ -10,6 +10,7 @@ interface BlogCardProps {
 	image: IGatsbyImageData;
 	imageAlt: string;
 	link: string;
+	tags: string[];
 }
 
 // react component to render an article card
@@ -32,7 +33,14 @@ export default function BlogCard(props: BlogCardProps) {
 					<h2 className="text-indigo-600 font-light text-sm mb-2">
 						{`${props.date.toDateString()}  ${hours.toString()}:${minutes.toString()}`}
 					</h2>
-					<p className="text-gray-500">{description}</p>
+					<div className="mt-5">
+						<p className="text-gray-500">{description}</p>
+						<div>
+							{props.tags.map(tag => (
+								<p>{tag}</p>
+							))}
+						</div>
+					</div>
 				</div>
 			</div>
 		</Link>

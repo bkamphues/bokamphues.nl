@@ -26,6 +26,7 @@ export default function Blog({ data }) {
 	const testImage = data.allFile.nodes[0].childrenImageSharp[0].gatsbyImageData;
 	const testImage2 =
 		data.allFile.nodes[1].childrenImageSharp[0].gatsbyImageData;
+	const testArray = ["Github", "Test"];
 
 	return (
 		<Layout>
@@ -39,6 +40,7 @@ export default function Blog({ data }) {
 						imageAlt="test"
 						image={testImage}
 						link="/projects/"
+						tags={testArray}
 					>
 						This is a test article. It allows for a maximum of 180 characters to
 						display beneath the card to ensure a decent description. Let's see
@@ -50,6 +52,7 @@ export default function Blog({ data }) {
 						date={new Date()}
 						imageAlt="test"
 						link="/projects/"
+						tags={testArray}
 					>
 						This is a test article. It allows for a maximum of 180 characters to
 						display beneath the card to ensure a decent description. Let's see
@@ -61,6 +64,7 @@ export default function Blog({ data }) {
 						date={new Date()}
 						imageAlt="test"
 						link="/projects/"
+						tags={testArray}
 					>
 						This is a test article. It allows for a maximum of 180 characters to
 						display beneath the card to ensure a decent description. Let's see
@@ -72,6 +76,7 @@ export default function Blog({ data }) {
 						date={new Date()}
 						imageAlt="test"
 						link="/projects/"
+						tags={testArray}
 					>
 						This is a test article. It allows for a maximum of 180 characters to
 						display beneath the card to ensure a decent description. Let's see
