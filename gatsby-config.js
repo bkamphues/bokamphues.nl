@@ -39,6 +39,13 @@ module.exports = {
 				path: path.join(__dirname, `content`, `site_settings`),
 			},
 		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `articles`,
+				path: path.join(__dirname, `content`, `articles`),
+			},
+		},
 	],
 	siteMetadata: {
 		title: "Bo Kamphues",
