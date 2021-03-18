@@ -82,6 +82,78 @@ export default function Blog({ data }) {
 						display beneath the card to ensure a decent description. Let's see
 						where it will stop to check what the 180 mark is.
 					</BlogCard>
+					<BlogCard
+						image={testImage}
+						title="How I made my website using Gatsby"
+						date={new Date()}
+						imageAlt="test"
+						link="/projects/"
+						tags={testArray}
+					>
+						This is a test article. It allows for a maximum of 180 characters to
+						display beneath the card to ensure a decent description. Let's see
+						where it will stop to check what the 180 mark is.
+					</BlogCard>
+					<BlogCard
+						image={testImage2}
+						title="How I made my website using Gatsby"
+						date={new Date()}
+						imageAlt="test"
+						link="/projects/"
+						tags={testArray}
+					>
+						This is a test article. It allows for a maximum of 180 characters to
+						display beneath the card to ensure a decent description. Let's see
+						where it will stop to check what the 180 mark is.
+					</BlogCard>
+					<BlogCard
+						image={testImage}
+						title="How I made my website using Gatsby"
+						date={new Date()}
+						imageAlt="test"
+						link="/projects/"
+						tags={testArray}
+					>
+						This is a test article. It allows for a maximum of 180 characters to
+						display beneath the card to ensure a decent description. Let's see
+						where it will stop to check what the 180 mark is.
+					</BlogCard>
+					<BlogCard
+						image={testImage2}
+						title="How I made my website using Gatsby"
+						date={new Date()}
+						imageAlt="test"
+						link="/projects/"
+						tags={testArray}
+					>
+						This is a test article. It allows for a maximum of 180 characters to
+						display beneath the card to ensure a decent description. Let's see
+						where it will stop to check what the 180 mark is.
+					</BlogCard>
+					<BlogCard
+						image={testImage}
+						title="How I made my website using Gatsby"
+						date={new Date()}
+						imageAlt="test"
+						link="/projects/"
+						tags={testArray}
+					>
+						This is a test article. It allows for a maximum of 180 characters to
+						display beneath the card to ensure a decent description. Let's see
+						where it will stop to check what the 180 mark is.
+					</BlogCard>
+					<BlogCard
+						image={testImage2}
+						title="How I made my website using Gatsby"
+						date={new Date()}
+						imageAlt="test"
+						link="/projects/"
+						tags={testArray}
+					>
+						This is a test article. It allows for a maximum of 180 characters to
+						display beneath the card to ensure a decent description. Let's see
+						where it will stop to check what the 180 mark is.
+					</BlogCard>
 				</BlogGrid>
 			</div>
 		</Layout>

@@ -26,20 +26,22 @@ export default function BlogCard(props: BlogCardProps) {
 	// component render
 	return (
 		<Link to={props.link}>
-			<div className="overflow-hidden transition duration-75 ease-in-out transform hover:scale-105 shadow-lg max-w-xs h-full rounded-xl bg-gray-100 mx-auto md:mx-0">
+			<div className="h-full overflow-hidden transition duration-75 ease-in-out transform hover:scale-105 shadow-lg max-w-xs rounded-xl bg-gray-100 mx-auto md:mx-0">
 				<GatsbyImage image={props.image} alt={props.imageAlt} />
 				<div className="p-5">
-					<h1 className="text-indigo-400 font-semibold text-xl">{title}</h1>
-					<h2 className="text-indigo-600 font-light text-sm mb-2">
+					<h1 className="text-indigo-400 font-semibold text-xl sm:h-20 md:h-24 lg:h-20">
+						{title}
+					</h1>
+					<h2 className="text-indigo-600 font-light text-sm">
 						{`${props.date.toDateString()}  ${hours.toString()}:${minutes.toString()}`}
 					</h2>
-					<div className="mt-5">
-						<p className="text-gray-500">{description}</p>
-						<div>
-							{props.tags.map(tag => (
-								<p>{tag}</p>
-							))}
-						</div>
+					<p className="text-gray-500">{description}</p>
+					<div className="flex mt-2 gap-1">
+						{props.tags.map(tag => (
+							<p className="text-sm rounded-md p-1 bg-indigo-400 text-gray-100">
+								{tag}
+							</p>
+						))}
 					</div>
 				</div>
 			</div>
