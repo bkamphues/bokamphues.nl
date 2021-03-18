@@ -5,7 +5,7 @@ import { useLocation } from "@reach/router";
 import { useStaticQuery, graphql } from "gatsby";
 
 // react component to add SEO to pages
-const SEO = ({ title, description, article }) => {
+const SEO = ({ title, description, article, lang }) => {
 	const { pathname } = useLocation();
 	const { site } = useStaticQuery(query);
 
@@ -20,10 +20,15 @@ const SEO = ({ title, description, article }) => {
 		title: title || defaultTitle,
 		description: description || defaultDescription,
 		url: `${siteUrl}${pathname}`,
+		lang: lang || "en",
 	};
 
 	return (
-		<Helmet title={seo.title} titleTemplate={titleTemplate}>
+		<Helmet
+			htmlAttributes={{ lang: lang }}
+			title={seo.title}
+			titleTemplate={titleTemplate}
+		>
 			<meta name="description" content={seo.description} />
 			{seo.url && <meta property="og:url" content={seo.url} />}
 			{(article ? true : null) && <meta property="og:type" content="article" />}
@@ -62,6 +67,7 @@ SEO.propTypes = {
 	description: PropTypes.string,
 	image: PropTypes.string,
 	article: PropTypes.bool,
+	lang: PropTypes.string,
 };
 
 // default component proptypes
@@ -70,4 +76,5 @@ SEO.defaultProps = {
 	description: null,
 	image: null,
 	article: false,
+	lang: null,
 };
