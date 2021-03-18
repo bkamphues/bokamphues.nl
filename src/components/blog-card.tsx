@@ -23,6 +23,9 @@ export default function BlogCard(props: BlogCardProps) {
 	const description = truncate(props.children, 180);
 	const title = truncate(props.title, 80);
 
+	// truncate the input tag array for accurate display in the card
+	const tags = props.tags.slice(0, 5);
+
 	// component render
 	return (
 		<Link to={props.link}>
@@ -36,8 +39,8 @@ export default function BlogCard(props: BlogCardProps) {
 						{`${props.date.toDateString()}  ${hours.toString()}:${minutes.toString()}`}
 					</h2>
 					<p className="text-gray-500">{description}</p>
-					<div className="flex mt-2 gap-1">
-						{props.tags.map(tag => (
+					<div className="flex flex-wrap mt-2 gap-1">
+						{tags.map(tag => (
 							<p className="text-sm rounded-md p-1 bg-indigo-400 text-gray-100">
 								{tag}
 							</p>

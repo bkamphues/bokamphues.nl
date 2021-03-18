@@ -26,7 +26,14 @@ export default function Blog({ data }) {
 	const testImage = data.allFile.nodes[0].childrenImageSharp[0].gatsbyImageData;
 	const testImage2 =
 		data.allFile.nodes[1].childrenImageSharp[0].gatsbyImageData;
-	const testArray = ["Github", "Test"];
+	const testArray = [
+		"Github",
+		"Test",
+		"Another Tag",
+		"Test again",
+		"tagger",
+		"taggis",
+	];
 
 	return (
 		<Layout>
