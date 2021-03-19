@@ -12,4 +12,4 @@ tags:
 
 Dit is een test artikel.
 
-![Alternatieve Tekst](/assets/profile_picture.jpg "Alternatieve Titel")
+![Alternatieve Tekst](/assets/game_profile_picture.jpg "Alternatieve Titel")

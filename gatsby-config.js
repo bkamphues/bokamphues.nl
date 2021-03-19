@@ -19,13 +19,6 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				name: `projects`,
-				path: path.join(__dirname, `content`, `projects`),
-			},
-		},
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
 				name: `assets`,
 				path: path.join(__dirname, `static`, `assets`),
 			},
@@ -44,11 +37,21 @@ module.exports = {
 				path: path.join(__dirname, `content`, `articles`),
 			},
 		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `projects`,
+				path: path.join(__dirname, `content`, `projects`),
+			},
+		},
 		`gatsby-transformer-sharp`,
 		{
 			resolve: `gatsby-transformer-remark`,
 			options: {
 				plugins: [
+					{
+						resolve: `gatsby-remark-relative-images`,
+					},
 					{
 						resolve: `gatsby-remark-images`,
 						options: { maxWidth: 1000 },
