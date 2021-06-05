@@ -52,18 +52,48 @@ collections:
     description: >
       All site wide settings like navbar links, logo's etc.
     files:
-     - label: "Navigation Bar"
-       name: "navbar"
-       file: "content/site_settings/navbar.yml"
-       fields:
-        - label: Navigation Links
-          label_singular: Navigation Link
-          name: nav_links
-          widget: list
-          fields: 
-            - label: Link Name
-              name: link_name
-              widget: string
-            - label: Link URL
-              name: link_url 
-              widget: string
+      - label: "Navigation Bar"
+        name: "navbar"
+        file: "content/site_settings/navbar.yml"
+        fields:
+          - label: Navigation Links
+            label_singular: Navigation Link
+            name: nav_links
+            widget: list
+            fields:
+              - label: Link Name
+                name: link_name
+                widget: string
+              - label: Link URL
+                name: link_url
+                widget: string
+
+  - name: articles
+    label: Articles
+    label_singular: Project
+    description: >
+      All articles for the blog page.
+    folder: content/articles
+    create: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Date
+        name: date
+        widget: datetime
+      - label: Slug
+        name: slug
+        widget: string
+      - label: Thumbnail
+        name: thumbnail
+        widget: image
+        allow_multiple: false
+      - label: Article
+        name: body
+        widget: markdown
+      - label: Tags
+        name: tags
+        widget: list
+        allow_add: true
+        field: { label: Tag, name: tag, widget: string }

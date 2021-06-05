@@ -15,3 +15,26 @@ export function validURL(link: string) {
 	// returns true if link is valid
 	return pattern.test(link);
 }
+
+// function to truncate input string to N characters and end with a horizontal ellipsis
+export function truncate(
+	str: string,
+	n: number,
+	useWordBoundary: boolean = true
+): string {
+	// if the input string is equal to or smaller than given N, just return the entire string
+	if (str.length <= n) {
+		return str;
+	}
+
+	// if the input string is longer than N, check for word boundary and return string
+	const subString = str.substr(0, n - 1);
+	if (useWordBoundary) {
+		return (
+			subString.substr(0, subString.lastIndexOf(" ")) +
+			String.fromCharCode(8230)
+		);
+	} else {
+		return subString + String.fromCharCode(8230);
+	}
+}

@@ -10,21 +10,12 @@ module.exports = {
 	/* Your site config here */
 	plugins: [
 		`gatsby-plugin-netlify-cms`,
-		`gatsby-transformer-remark`,
 		`gatsby-plugin-postcss`,
-		`gatsby-plugin-sharp`,
-		`gatsby-plugin-image`,
-		`gatsby-transformer-sharp`,
 		`gatsby-transformer-yaml`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-sitemap`,
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				name: `projects`,
-				path: path.join(__dirname, `content`, `projects`),
-			},
-		},
+		`gatsby-plugin-image`,
+		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -37,6 +28,39 @@ module.exports = {
 			options: {
 				name: `settings`,
 				path: path.join(__dirname, `content`, `site_settings`),
+			},
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `articles`,
+				path: path.join(__dirname, `content`, `articles`),
+			},
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `projects`,
+				path: path.join(__dirname, `content`, `projects`),
+			},
+		},
+		`gatsby-transformer-sharp`,
+		{
+			resolve: `gatsby-transformer-remark`,
+			options: {
+				plugins: [
+					{
+						resolve: `gatsby-remark-relative-images`,
+					},
+					{
+						resolve: `gatsby-remark-images`,
+						options: { maxWidth: 1000 },
+					},
+					{
+						resolve: `gatsby-remark-prismjs`,
+						options: {},
+					},
+				],
 			},
 		},
 	],
