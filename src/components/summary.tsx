@@ -4,7 +4,7 @@ export default function Summary() {
 	// calculate age for summary paragraph
 	const birthday = new Date(1999, 5, 8);
 	const diff = new Date(Date.now() - birthday.getTime());
-	let age = Math.abs(diff.getUTCFullYear() - 1970);
+	let age = Math.abs(diff.getUTCFullYear() - 1969);
 
 	// return the component
 	return (

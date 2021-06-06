@@ -27,15 +27,6 @@ export default function Hero({
 	// return component
 	return (
 		<div className="w-full p-5">
-			<StaticImage
-				src="../../static/assets/profile_picture.jpg"
-				alt="Profile Picture"
-				placeholder="blurred"
-				layout="fixed"
-				width={250}
-				aspectRatio={1 / 1}
-				className="mx-auto rounded-full mb-4 border-8 shadow-xl overflow-hidden z-0"
-			/>
 			<GatsbyImage
 				image={image}
 				alt="Profile Picture"

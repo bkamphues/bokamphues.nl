@@ -20,7 +20,7 @@ export default function Index({ data }) {
 					"Frontend Developer",
 					"Visual Effects Artist",
 				]}
-				image={data.gravatar.localImage.childImageSharp.gatsbyImageData}
+				image={data.allContentfulAsset.edges[0].node.gatsbyImageData}
 			/>
 			<Summary />
 			<Technologies />
@@ -29,11 +29,16 @@ export default function Index({ data }) {
 }
 
 export const query = graphql`
-	{
-		gravatar {
-			localImage {
-				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, aspectRatio: 1, width: 250)
+	query ProfilePicture {
+		allContentfulAsset(filter: { title: { eq: "Profile Picture" } }) {
+			edges {
+				node {
+					gatsbyImageData(
+						aspectRatio: 1
+						placeholder: BLURRED
+						width: 250
+						layout: FIXED
+					)
 				}
 			}
 		}

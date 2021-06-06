@@ -11,7 +11,12 @@ export default function Technologies(): JSX.Element {
 			</h1>
 			<div className="max-w-xl mx-auto mb-5">
 				<div className="grid grid-cols-3 gap-y-10 justify-items-center">
-					<IconContext.Provider value={{ color: "gray", size: "4em" }}>
+					<IconContext.Provider
+						value={{
+							size: "4em",
+							className: "transition-all text-gray-600 hover:text-indigo-400",
+						}}
+					>
 						{TechnologyIcons}
 					</IconContext.Provider>
 				</div>

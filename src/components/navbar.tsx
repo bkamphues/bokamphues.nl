@@ -29,49 +29,49 @@ interface NavbarInterfaceState {
 	mobileActive?: boolean;
 }
 
-// export default class Navbar extends React.Component<
-// 	NavbarInterfaceProps,
-// 	NavbarInterfaceState
-// > {
-// 	// constructor hook
-// 	constructor(props) {
-// 		super(props);
-// 		this.state = {
-// 			mobileActive: false,
-// 		};
-// 		this.handleHamburger = this.handleHamburger.bind(this);
-// 	}
+export default class Navbar extends React.Component<
+	NavbarInterfaceProps,
+	NavbarInterfaceState
+> {
+	// constructor hook
+	constructor(props) {
+		super(props);
+		this.state = {
+			mobileActive: false,
+		};
+		this.handleHamburger = this.handleHamburger.bind(this);
+	}
 
-// 	// hamburger callback
-// 	handleHamburger() {
-// 		this.setState(state => ({ mobileActive: !state.mobileActive }));
-// 		console.log("Test!");
-// 	}
+	// hamburger callback
+	handleHamburger() {
+		this.setState(state => ({ mobileActive: !state.mobileActive }));
+		console.log("Test!");
+	}
 
-// 	// render hook
-// 	render() {
-// 		return (
-// 			<nav>
-// 				<div className="flex flex-wrap items-center justify-between p-6 container mx-auto">
-// 					<NavigationLogos />
-// 					<NavigationHamburger eventHandler={this.handleHamburger} />
-// 					<NavigationLinks />
-// 					<Transition
-// 						show={this.state.mobileActive}
-// 						enter="transition transform duration-500"
-// 						enterFrom="opacity-0 -translate-x-8"
-// 						enterTo="opacity-100"
-// 						leave="transition transform duration-500"
-// 						leaveFrom="opacity-100"
-// 						leaveTo="opacity-0 -translate-x-8"
-// 						className="w-full"
-// 						unmount={false}
-// 						appear={true}
-// 					>
-// 						<NavigationLinksMobile />
-// 					</Transition>
-// 				</div>
-// 			</nav>
-// 		);
-// 	}
-// }
+	// render hook
+	render() {
+		return (
+			<nav>
+				<div className="flex flex-wrap items-center justify-between p-6 container mx-auto">
+					<NavigationLogos />
+					<NavigationHamburger eventHandler={this.handleHamburger} />
+					<NavigationLinks />
+					<Transition
+						show={this.state.mobileActive}
+						enter="transition transform duration-500"
+						enterFrom="opacity-0 -translate-x-8"
+						enterTo="opacity-100"
+						leave="transition transform duration-500"
+						leaveFrom="opacity-100"
+						leaveTo="opacity-0 -translate-x-8"
+						className="w-full"
+						unmount={false}
+						appear={true}
+					>
+						<NavigationLinksMobile />
+					</Transition>
+				</div>
+			</nav>
+		);
+	}
+}
