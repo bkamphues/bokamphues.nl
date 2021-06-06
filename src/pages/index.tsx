@@ -3,8 +3,9 @@ import Layout from "../components/layout";
 import Hero from "../components/hero";
 import Summary from "../components/summary";
 import Technologies from "../components/technologies";
+import { graphql } from "gatsby";
 
-export default function Index() {
+export default function Index({ data }) {
 	return (
 		<Layout>
 			<Hero
@@ -19,9 +20,22 @@ export default function Index() {
 					"Frontend Developer",
 					"Visual Effects Artist",
 				]}
+				image={data.gravatar.localImage.childImageSharp.gatsbyImageData}
 			/>
 			<Summary />
 			<Technologies />
 		</Layout>
 	);
 }
+
+export const query = graphql`
+	{
+		gravatar {
+			localImage {
+				childImageSharp {
+					gatsbyImageData(placeholder: BLURRED, aspectRatio: 1, width: 250)
+				}
+			}
+		}
+	}
+`;

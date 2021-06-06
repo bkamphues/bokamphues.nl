@@ -21,19 +21,6 @@ module.exports = {
 				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 			},
 		},
-		{
-			resolve: `gatsby-source-gravatar`,
-			options: {
-				emails: [process.env.GRAVATAR_EMAIL],
-			},
-		},
-		{
-			resolve: `gatsby-plugin-remote-images`,
-			options: {
-				nodeType: `gravatar`,
-				imagePath: `url`,
-			},
-		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-image`,

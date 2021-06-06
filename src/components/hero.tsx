@@ -1,13 +1,20 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
-import { StaticImage } from "gatsby-plugin-image";
+import {
+	StaticImage,
+	GatsbyImage,
+	GatsbyImageProps,
+} from "gatsby-plugin-image";
 
+// React component for a home page hero banner
 export default function Hero({
 	heading,
 	subheading,
+	image,
 }: {
 	heading: JSX.Element;
 	subheading: string[];
+	image: GatsbyImageProps["image"];
 }): JSX.Element {
 	// create a typewriter effect from props
 	let typewriter = (
@@ -27,6 +34,11 @@ export default function Hero({
 				layout="fixed"
 				width={250}
 				aspectRatio={1 / 1}
+				className="mx-auto rounded-full mb-4 border-8 shadow-xl overflow-hidden z-0"
+			/>
+			<GatsbyImage
+				image={image}
+				alt="Profile Picture"
 				className="mx-auto rounded-full mb-4 border-8 shadow-xl overflow-hidden z-0"
 			/>
 			<h1 className="mx-auto mb-4 max-w-lg text-4xl sm:text-6xl text-indigo-500 text-center">
