@@ -14,8 +14,6 @@ module.exports = {
 		`gatsby-plugin-postcss`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-sitemap`,
-		`gatsby-plugin-image`,
-		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-source-contentful`,
 			options: {
@@ -29,5 +27,15 @@ module.exports = {
 				emails: [process.env.GRAVATAR_EMAIL],
 			},
 		},
+		{
+			resolve: `gatsby-plugin-remote-images`,
+			options: {
+				nodeType: `gravatar`,
+				imagePath: `url`,
+			},
+		},
+		`gatsby-transformer-sharp`,
+		`gatsby-plugin-sharp`,
+		`gatsby-plugin-image`,
 	],
 };
