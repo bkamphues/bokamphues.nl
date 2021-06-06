@@ -7,7 +7,10 @@ interface ILink {
 	link_name: string;
 }
 
-const links: ILink[] = [{ link_url: "/", link_name: "Home" }];
+const links: ILink[] = [
+	{ link_url: "/", link_name: "Home" },
+	{ link_url: "/test-article", link_name: "Test Article" },
+];
 
 // component that retrieves links from site-wide settings and returns navbar items
 export default function NavigationLinks() {
