@@ -23,5 +23,11 @@ module.exports = {
 				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 			},
 		},
+		{
+			resolve: `gatsby-source-gravatar`,
+			options: {
+				emails: [process.env.GRAVATAR_EMAIL],
+			},
+		},
 	],
 };

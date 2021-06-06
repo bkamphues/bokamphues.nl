@@ -25,6 +25,7 @@
     "gatsby-plugin-sitemap": "^3.1.0",
     "gatsby-source-contentful": "^5.6.1",
     "gatsby-source-filesystem": "^3.0.0",
+    "gatsby-source-gravatar": "^1.0.1",
     "postcss": "^8.2.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
