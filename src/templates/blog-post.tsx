@@ -87,8 +87,10 @@ export default function BlogPost({ data }): JSX.Element {
 						{documentToReactComponents(document, options)}
 					</div>
 				</div>
-				<div className="p-4 bg-gray-200 rounded-xl">
-					This is a long test sentence to see how it looks.
+				<div>
+					<div className="p-4 bg-gray-200 rounded-xl">
+						This is a long test sentence to see how it looks.
+					</div>
 				</div>
 			</div>
 		</Layout>
