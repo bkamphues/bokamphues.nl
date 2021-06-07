@@ -28,7 +28,7 @@ export default function BlogPost({ data }): JSX.Element {
 						<GatsbyImage
 							image={image.gatsbyImageData}
 							alt={image.title}
-							className="rounded-xl"
+							className="rounded-xl shadow-sm"
 						/>
 						<p className="italic text-sm text-gray-500 my-2">
 							{image.description}
