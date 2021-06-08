@@ -2,8 +2,9 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { GatsbyImage } from "gatsby-plugin-image";
+import CodeBlock from "../components/code-block";
 
 // react functional component for blogpost pages
 export default function BlogPost({ data }): JSX.Element {
@@ -14,16 +15,69 @@ export default function BlogPost({ data }): JSX.Element {
 	const document = JSON.parse(article.raw);
 
 	const options = {
-		// renderMark: {
-		// 	[MARKS.CODE]: (node, children) => {
-		// 		return <code>{children}</code>;
-		// 	},
-		// },
+		renderMark: {
+			[MARKS.CODE]: text => {
+				return (
+					<code className="text-indigo-400 bg-gray-700 shadow-sm p-1 rounded-md">
+						{text}
+					</code>
+				);
+			},
+		},
 		renderNode: {
+			// render embedded entries
+			[BLOCKS.EMBEDDED_ENTRY]: entry => {
+				// find the corresponding reference through the contentful id
+				const nodeID = entry.data.target.sys.id;
+				const reference = article.references.find(
+					({ contentful_id: id }) => id === nodeID
+				);
+
+				// render CodeBlocks
+				if (reference.sys.contentType.sys.id == "codeBlock") {
+					return (
+						<CodeBlock
+							className="rounded-md shadow-sm"
+							language={reference.codeLanguage}
+						>
+							{reference.code.code}
+						</CodeBlock>
+					);
+				}
+			},
+			// render inline entries
+			[INLINES.EMBEDDED_ENTRY]: entry => {
+				// find the corresponding reference through the contentful id
+				const nodeID = entry.data.target.sys.id;
+				const reference = article.references.find(
+					({ contentful_id: id }) => id === nodeID
+				);
+
+				// render CodeBlocks
+				if (reference.sys.contentType.sys.id == "codeBlock") {
+					return (
+						<CodeBlock
+							className="rounded-md shadow-sm"
+							language={reference.codeLanguage}
+						>
+							{reference.code.code}
+						</CodeBlock>
+					);
+				} else if (reference.sys.contentType.sys.id == "article") {
+					return (
+						<div>
+							<div>
+								<h1 className="bg-gray-400">{reference.articleTitle}</h1>
+							</div>
+						</div>
+					);
+				} else {
+					throw `Render function for ContentType ${reference.sys.contentType.sys.id} was not found!`;
+				}
+			},
 			// render embedded assets to gatsby images
 			[BLOCKS.EMBEDDED_ASSET]: node => {
 				// find the corresponding reference through the contentful id
-				// and return a <GatsbyImage/> component
 				const image = article.references.find(
 					({ contentful_id: id }) => id === node.data.target.sys.id
 				);
@@ -160,12 +214,42 @@ export const query = graphql`
 				references {
 					... on ContentfulArticle {
 						contentful_id
+						articleTitle
+						articleSlug
+						articleBody {
+							raw
+						}
+						sys {
+							contentType {
+								sys {
+									id
+								}
+							}
+						}
 					}
 					... on ContentfulAsset {
 						gatsbyImageData(placeholder: BLURRED)
 						contentful_id
 						description
 						title
+						sys {
+							type
+						}
+					}
+					... on ContentfulCodeBlock {
+						codeLanguage
+						code {
+							code
+						}
+						codeSnippetTitle
+						contentful_id
+						sys {
+							contentType {
+								sys {
+									id
+								}
+							}
+						}
 					}
 				}
 			}
