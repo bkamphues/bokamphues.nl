@@ -14,6 +14,11 @@ export default function BlogPost({ data }): JSX.Element {
 	const document = JSON.parse(article.raw);
 
 	const options = {
+		// renderMark: {
+		// 	[MARKS.CODE]: (node, children) => {
+		// 		return <code>{children}</code>;
+		// 	},
+		// },
 		renderNode: {
 			// render embedded assets to gatsby images
 			[BLOCKS.EMBEDDED_ASSET]: node => {
@@ -72,6 +77,52 @@ export default function BlogPost({ data }): JSX.Element {
 					</h4>
 				);
 			},
+			// render H5 headings
+			[BLOCKS.HEADING_5]: (node, children) => {
+				return (
+					<h5 className="text-xl my-5 font-semibold text-indigo-900">
+						{children}
+					</h5>
+				);
+			},
+			// render H6 headings
+			[BLOCKS.HEADING_6]: (node, children) => {
+				return (
+					<h6 className="text-lg my-5 font-semibold text-indigo-900">
+						{children}
+					</h6>
+				);
+			},
+			// render paragraphs
+			[BLOCKS.PARAGRAPH]: (node, children) => {
+				return <p className="my-4 leading-normal font-normal">{children}</p>;
+			},
+			// render ordered list
+			[BLOCKS.OL_LIST]: (node, children) => {
+				return <ol className="list-decimal list-outside px-8">{children}</ol>;
+			},
+			// render unordered list
+			[BLOCKS.UL_LIST]: (node, children) => {
+				return <ul className="list-disc list-outside px-8">{children}</ul>;
+			},
+			// render list item
+			[BLOCKS.LIST_ITEM]: (node, children) => {
+				return <li>{children}</li>;
+			},
+			// render block quote
+			[BLOCKS.QUOTE]: (node, children) => {
+				return (
+					<blockquote className="relative p-4 text-xl italic border-l-4 bg-gray-100 text-gray-600 border-gray-500 quote">
+						<div
+							className="mr-2 text-gray-500 absolute top-4 leading-none text-xl"
+							aria-hidden="true"
+						>
+							&ldquo;
+						</div>
+						<p>{children}</p>
+					</blockquote>
+				);
+			},
 		},
 	};
 
@@ -79,8 +130,8 @@ export default function BlogPost({ data }): JSX.Element {
 	return (
 		<Layout>
 			<div className="container mx-auto p-4 flex">
-				<div className="p-6 w-3/4 bg-gray-200 mr-6 rounded-xl">
-					<h1 className="text-6xl bold italic text-indigo-400 font-extrabold my-4 mx-8">
+				<div className="p-6 w-3/5 bg-gray-200 mr-6 rounded-xl">
+					<h1 className="text-6xl bold italic uppercase text-indigo-400 font-extrabold my-4 mx-8">
 						{data.contentfulArticle.articleTitle}
 					</h1>
 					<div className="mx-8">
