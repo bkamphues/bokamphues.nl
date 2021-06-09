@@ -44,6 +44,9 @@ export default function BlogPost({ data }): JSX.Element {
 						</CodeBlock>
 					);
 				}
+				// } else {
+				// 	throw `Render function for ContentType ${reference.sys.contentType.sys.id} was not found!`;
+				// }
 			},
 			// render inline entries
 			[INLINES.EMBEDDED_ENTRY]: entry => {
