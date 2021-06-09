@@ -9,7 +9,7 @@ interface ILink {
 
 const links: ILink[] = [
 	{ link_url: "/", link_name: "Home" },
-	{ link_url: "/test-article", link_name: "Test Article" },
+	{ link_url: "/blog/test-article", link_name: "Test Article" },
 ];
 
 // component that retrieves links from site-wide settings and returns navbar items

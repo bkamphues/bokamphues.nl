@@ -5,6 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { GatsbyImage } from "gatsby-plugin-image";
 import CodeBlock from "../components/code-block";
+import { Link } from "gatsby";
 
 // react functional component for blogpost pages
 export default function BlogPost({ data }): JSX.Element {
@@ -43,10 +44,9 @@ export default function BlogPost({ data }): JSX.Element {
 							{reference.code.code}
 						</CodeBlock>
 					);
+				} else {
+					throw `Render function for ContentType ${reference.sys.contentType.sys.id} was not found!`;
 				}
-				// } else {
-				// 	throw `Render function for ContentType ${reference.sys.contentType.sys.id} was not found!`;
-				// }
 			},
 			// render inline entries
 			[INLINES.EMBEDDED_ENTRY]: entry => {
@@ -68,11 +68,18 @@ export default function BlogPost({ data }): JSX.Element {
 					);
 				} else if (reference.sys.contentType.sys.id == "article") {
 					return (
-						<div>
-							<div>
-								<h1 className="bg-gray-400">{reference.articleTitle}</h1>
+						<Link to={`/blog/${reference.articleSlug}`}>
+							<div className="flex rounded-lg p-4 bg-gray-100 shadow-sm transition-transform transform hover:scale-105">
+								<div>
+									<h1 className="text-md uppercase text-indigo-400">
+										{reference.articleTitle}
+									</h1>
+									<h2 className="text-sm italic text-gray-400">
+										{`/blog/${reference.articleSlug}`}
+									</h2>
+								</div>
 							</div>
-						</div>
+						</Link>
 					);
 				} else {
 					throw `Render function for ContentType ${reference.sys.contentType.sys.id} was not found!`;
@@ -186,19 +193,30 @@ export default function BlogPost({ data }): JSX.Element {
 	// render the richt-text field
 	return (
 		<Layout>
-			<div className="container mx-auto p-4 flex">
-				<div className="p-6 w-3/5 bg-gray-200 mr-6 rounded-xl">
-					<h1 className="text-6xl bold italic uppercase text-indigo-400 font-extrabold my-4 mx-8">
-						{data.contentfulArticle.articleTitle}
-					</h1>
-					<div className="mx-8">
+			<div className="container mx-auto p-4 flex flex-wrap sm:flex-nowrap">
+				<div className="bg-gray-200 sm:mr-6 rounded-xl w-full sm:w-2/3">
+					<GatsbyImage
+						image={data.contentfulArticle.articleThumbnail.gatsbyImageData}
+						alt={data.contentfulArticle.articleThumbnail.title}
+						className="rounded-t-xl"
+					/>
+					<div className="mx-8 px-0.5 sm:px-6 pt-0.5 sm:pt-6">
+						<h1 className="text-6xl  bold italic uppercase text-indigo-400 font-extrabold">
+							{data.contentfulArticle.articleTitle}
+						</h1>
+						<section className="italic text-sm text-gray-400">
+							<h2>Created at: {data.contentfulArticle.createdAt}</h2>
+							<h2>Last updated: {data.contentfulArticle.updatedAt}</h2>
+						</section>
+					</div>
+					<div className="mx-8 p-0.5 sm:p-6 ">
 						{documentToReactComponents(document, options)}
 					</div>
 				</div>
-				<div>
-					<div className="p-4 bg-gray-200 rounded-xl">
+				<div className="mt-4 sm:mt-0">
+					<p className="p-4 bg-gray-200 rounded-xl">
 						This is a long test sentence to see how it looks.
-					</div>
+					</p>
 				</div>
 			</div>
 		</Layout>
@@ -212,6 +230,13 @@ export const query = graphql`
 			contentful_id
 			articleTitle
 			articleSlug
+			updatedAt(fromNow: true)
+			createdAt(formatString: "YYYY-MM-DD HH:mm z")
+			articleThumbnail {
+				description
+				title
+				gatsbyImageData(placeholder: BLURRED)
+			}
 			articleBody {
 				raw
 				references {
@@ -221,6 +246,11 @@ export const query = graphql`
 						articleSlug
 						articleBody {
 							raw
+						}
+						articleThumbnail {
+							gatsbyImageData(placeholder: BLURRED, aspectRatio: 1)
+							description
+							title
 						}
 						sys {
 							contentType {
